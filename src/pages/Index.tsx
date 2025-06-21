@@ -4,7 +4,8 @@ import Header from '../components/Header';
 import EnhancedSearchForm from '../components/EnhancedSearchForm';
 import BusResults from '../components/BusResults';
 import RouteViewer from '../components/RouteViewer';
-import LiveTracker from '../components/LiveTracker';
+import EnhancedLiveTracker from '../components/EnhancedLiveTracker';
+import FeatureSelector from '../components/FeatureSelector';
 import { Bus } from '../types/bus';
 import { sampleBuses } from '../data/busData';
 import { busSchedules } from '../data/busSchedules';
@@ -27,6 +28,7 @@ const Index = ({ onLogout }: IndexProps) => {
   const [showRouteViewer, setShowRouteViewer] = useState(false);
   const [showLiveTracker, setShowLiveTracker] = useState(false);
   const [filteredBuses, setFilteredBuses] = useState<Bus[]>([]);
+  const [selectedFeatures, setSelectedFeatures] = useState<string[]>(['live-gps', 'accurate-eta', 'delay-alerts']);
 
   const handleSearch = (fromStopId: string, toStopId: string, fromName: string, toName: string) => {
     setSearchParams({ fromStopId, toStopId, fromName, toName });
@@ -53,6 +55,10 @@ const Index = ({ onLogout }: IndexProps) => {
     setShowLiveTracker(true);
   };
 
+  const handleFeaturesChange = (features: string[]) => {
+    setSelectedFeatures(features);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-50">
       <Header onLogout={onLogout} />
@@ -67,6 +73,11 @@ const Index = ({ onLogout }: IndexProps) => {
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Know when your bus arrives, track live location, get delay alerts, and plan your journey across Kerala
           </p>
+        </div>
+
+        {/* Feature Selector */}
+        <div className="max-w-4xl mx-auto mb-8">
+          <FeatureSelector onFeaturesChange={handleFeaturesChange} />
         </div>
 
         {/* Enhanced Search Form */}
@@ -144,10 +155,11 @@ const Index = ({ onLogout }: IndexProps) => {
         onClose={() => setShowRouteViewer(false)}
       />
 
-      <LiveTracker
+      <EnhancedLiveTracker
         bus={selectedBus}
         isOpen={showLiveTracker}
         onClose={() => setShowLiveTracker(false)}
+        selectedFeatures={selectedFeatures}
       />
     </div>
   );
