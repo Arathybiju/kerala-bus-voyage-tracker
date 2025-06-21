@@ -2,23 +2,17 @@
 import React from 'react';
 import { Bus } from '../types/bus';
 import BusCard from './BusCard';
-import { sampleBuses } from '../data/busData';
 
 interface BusResultsProps {
   searchFrom: string;
   searchTo: string;
+  buses: Bus[];
   onViewRoute: (bus: Bus) => void;
   onTrackLive: (bus: Bus) => void;
 }
 
-const BusResults = ({ searchFrom, searchTo, onViewRoute, onTrackLive }: BusResultsProps) => {
-  // Filter buses based on search criteria
-  const filteredBuses = sampleBuses.filter(bus => 
-    bus.from.toLowerCase().includes(searchFrom.toLowerCase()) ||
-    bus.to.toLowerCase().includes(searchTo.toLowerCase())
-  );
-
-  if (filteredBuses.length === 0) {
+const BusResults = ({ searchFrom, searchTo, buses, onViewRoute, onTrackLive }: BusResultsProps) => {
+  if (buses.length === 0) {
     return (
       <div className="text-center py-12">
         <div className="bg-gray-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
@@ -38,7 +32,7 @@ const BusResults = ({ searchFrom, searchTo, onViewRoute, onTrackLive }: BusResul
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold text-gray-900">
-          Available Buses ({filteredBuses.length})
+          Available Buses ({buses.length})
         </h2>
         <div className="text-sm text-gray-600">
           From <span className="font-medium text-emerald-600">{searchFrom}</span> to{' '}
@@ -47,7 +41,7 @@ const BusResults = ({ searchFrom, searchTo, onViewRoute, onTrackLive }: BusResul
       </div>
 
       <div className="grid gap-4">
-        {filteredBuses.map((bus) => (
+        {buses.map((bus) => (
           <BusCard
             key={bus.id}
             bus={bus}
