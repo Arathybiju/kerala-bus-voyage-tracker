@@ -1,4 +1,3 @@
-
 import { Bus, Route } from '../types/bus';
 
 export const sampleBuses: Bus[] = [
@@ -417,6 +416,208 @@ export const sampleBuses: Bus[] = [
       lat: 10.5600,
       lng: 76.1000,
       timestamp: '2025-06-21T06:00:00Z'
+    }
+  },
+
+  // Additional New Buses for Better Coverage
+  {
+    id: 'bus-021',
+    number: 'KL-03-1201',
+    routeName: 'Thiruvananthapuram - Kanyakumari Express',
+    from: 'Thiruvananthapuram Central',
+    to: 'Kanyakumari',
+    departureTime: '05:30',
+    arrivalTime: '07:00',
+    operator: 'KSRTC',
+    busType: 'AC Seater',
+    status: 'on-time',
+    rating: 4.3,
+    price: 95,
+    amenities: ['AC', 'Comfortable Seats', 'Interstate Service'],
+    currentLocation: {
+      lat: 8.4000,
+      lng: 77.0500,
+      timestamp: '2025-06-21T06:15:00Z'
+    }
+  },
+  {
+    id: 'bus-022',
+    number: 'KL-07-2301',
+    routeName: 'Kochi Metro Feeder - Aluva to Airport',
+    from: 'Aluva Metro Station',
+    to: 'Cochin International Airport',
+    departureTime: '06:00',
+    arrivalTime: '06:45',
+    operator: 'KMRL',
+    busType: 'AC Seater',
+    status: 'on-time',
+    rating: 4.5,
+    price: 40,
+    amenities: ['AC', 'Airport Shuttle', 'Luggage Space'],
+    currentLocation: {
+      lat: 10.1200,
+      lng: 76.4000,
+      timestamp: '2025-06-21T06:30:00Z'
+    }
+  },
+  {
+    id: 'bus-023',
+    number: 'KL-14-8901',
+    routeName: 'Kozhikode - Wayanad Hill Station',
+    from: 'Kozhikode KSRTC Stand',
+    to: 'Kalpetta',
+    departureTime: '07:30',
+    arrivalTime: '10:30',
+    operator: 'KSRTC',
+    busType: 'Ordinary',
+    status: 'on-time',
+    rating: 4.0,
+    price: 120,
+    amenities: ['Hill Route', 'Scenic Views'],
+    currentLocation: {
+      lat: 11.4000,
+      lng: 75.9000,
+      timestamp: '2025-06-21T08:30:00Z'
+    }
+  },
+  {
+    id: 'bus-024',
+    number: 'KL-12-4501',
+    routeName: 'Kannur - Mysore Interstate',
+    from: 'Kannur KSRTC Stand',
+    to: 'Mysore',
+    departureTime: '22:00',
+    arrivalTime: '05:30',
+    operator: 'Private',
+    busType: 'AC Sleeper',
+    status: 'on-time',
+    rating: 4.2,
+    price: 450,
+    amenities: ['AC', 'Sleeper Berths', 'Interstate', 'WiFi'],
+    currentLocation: {
+      lat: 11.9000,
+      lng: 75.5000,
+      timestamp: '2025-06-21T23:00:00Z'
+    }
+  },
+  {
+    id: 'bus-025',
+    number: 'KL-02-6701',
+    routeName: 'Kollam - Shencottah Local',
+    from: 'Kollam KSRTC Stand',
+    to: 'Shencottah',
+    departureTime: '08:15',
+    arrivalTime: '10:00',
+    operator: 'KSRTC',
+    busType: 'Ordinary',
+    status: 'on-time',
+    rating: 3.8,
+    price: 65,
+    amenities: ['Border Route', 'Tamil Nadu Connection'],
+    currentLocation: {
+      lat: 8.9500,
+      lng: 76.8000,
+      timestamp: '2025-06-21T09:00:00Z'
+    }
+  },
+  {
+    id: 'bus-026',
+    number: 'KL-04-7801',
+    routeName: 'Kottayam - Vagamon Hill Station',
+    from: 'Kottayam KSRTC Stand',
+    to: 'Vagamon',
+    departureTime: '09:00',
+    arrivalTime: '11:30',
+    operator: 'KSRTC',
+    busType: 'AC Seater',
+    status: 'on-time',
+    rating: 4.4,
+    price: 140,
+    amenities: ['AC', 'Hill Station', 'Tourist Route'],
+    currentLocation: {
+      lat: 9.7000,
+      lng: 76.8000,
+      timestamp: '2025-06-21T10:15:00Z'
+    }
+  },
+  {
+    id: 'bus-027',
+    number: 'KL-08-5501',
+    routeName: 'Thrissur - Coimbatore Fast',
+    from: 'Thrissur KSRTC Stand',
+    to: 'Coimbatore',
+    departureTime: '12:30',
+    arrivalTime: '15:30',
+    operator: 'Private',
+    busType: 'AC Seater',
+    status: 'on-time',
+    rating: 4.1,
+    price: 180,
+    amenities: ['AC', 'Interstate', 'Fast Service'],
+    currentLocation: {
+      lat: 10.6000,
+      lng: 76.4000,
+      timestamp: '2025-06-21T13:30:00Z'
+    }
+  },
+  {
+    id: 'bus-028',
+    number: 'KL-05-3301',
+    routeName: 'Alappuzha - Kumbakonam Temple Circuit',
+    from: 'Alappuzha KSRTC Stand',
+    to: 'Kumbakonam',
+    departureTime: '20:00',
+    arrivalTime: '02:30',
+    operator: 'Private',
+    busType: 'Non-AC Seater',
+    status: 'on-time',
+    rating: 3.9,
+    price: 240,
+    amenities: ['Temple Circuit', 'Night Service'],
+    currentLocation: {
+      lat: 9.3000,
+      lng: 76.5000,
+      timestamp: '2025-06-21T21:00:00Z'
+    }
+  },
+  {
+    id: 'bus-029',
+    number: 'KL-11-6601',
+    routeName: 'Malappuram - Bangalore Volvo',
+    from: 'Malappuram KSRTC Stand',
+    to: 'Bangalore',
+    departureTime: '21:30',
+    arrivalTime: '06:00',
+    operator: 'Private',
+    busType: 'AC Sleeper',
+    status: 'on-time',
+    rating: 4.6,
+    price: 550,
+    amenities: ['AC', 'Volvo', 'Sleeper', 'WiFi', 'Entertainment'],
+    currentLocation: {
+      lat: 11.1000,
+      lng: 76.2000,
+      timestamp: '2025-06-21T22:30:00Z'
+    }
+  },
+  {
+    id: 'bus-030',
+    number: 'KL-13-9901',
+    routeName: 'Wayanad Wildlife Safari Special',
+    from: 'Kalpetta',
+    to: 'Bandipur National Park',
+    departureTime: '06:30',
+    arrivalTime: '09:00',
+    operator: 'Kerala Tourism',
+    busType: 'Tourist Special',
+    status: 'on-time',
+    rating: 4.7,
+    price: 200,
+    amenities: ['Wildlife Safari', 'Guide Service', 'Breakfast'],
+    currentLocation: {
+      lat: 11.6500,
+      lng: 76.2000,
+      timestamp: '2025-06-21T07:30:00Z'
     }
   }
 ];
